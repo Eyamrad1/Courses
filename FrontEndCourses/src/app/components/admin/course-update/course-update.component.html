@@ -1,0 +1,52 @@
+<div class="course-container">
+    <h2>Edit Course</h2>
+    <form [formGroup]="courseForm" (ngSubmit)="updateCourse()">
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input
+                    id="courseName"
+                    formControlName="courseName"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter course name"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input
+                    id="price"
+                    formControlName="price"
+                    type="number"
+                    class="form-control"
+                    placeholder="Enter price"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="image">Course Image</label>
+            <input
+                    id="image"
+                    type="file"
+                    class="file-input"
+                    (change)="onFileSelected($event)"
+            />
+        </div>
+
+        <button
+                type="submit"
+                [disabled]="courseForm.invalid"
+                class="btn btn-primary"
+        >
+            Update Course
+        </button>
+        <button
+                type="button"
+                (click)="cancel()"
+                class="btn btn-secondary"
+                matTooltip="Cancel"
+        >
+            <mat-icon>cancel</mat-icon> Cancel
+        </button>
+    </form>
+</div>

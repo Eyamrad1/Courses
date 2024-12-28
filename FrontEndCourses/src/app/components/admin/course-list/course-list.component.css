@@ -1,0 +1,124 @@
+.course-list-container {
+    padding: 20px;
+}
+
+.course-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.course-table thead th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    position: sticky;
+    top: 0; /* Sticky header */
+    z-index: 1;
+}
+
+.course-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.course-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.course-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.course-table tbody tr:hover {
+    background-color: #f1f8ff;
+}
+
+.course-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.course-table td:last-child {
+    text-align: center;
+}
+
+.course-image {
+    max-width: 95px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.pagination-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-btn.disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.add-course-btn-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    margin-bottom: 20px;
+}
+
+.add-course-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745; /* A professional green shade */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-course-btn:hover {
+    background-color: #218838; /* Darker green for hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.add-course-btn:active {
+    background-color: #1e7e34; /* Even darker green for active state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

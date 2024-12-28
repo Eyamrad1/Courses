@@ -1,0 +1,56 @@
+<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+  <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full max-w-full flex-grow flex-1">
+        <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
+          Performance
+        </h6>
+        <h2 class="text-blueGray-700 text-xl font-semibold">Survey Statistics</h2>
+      </div>
+      <div class="w-full flex justify-end">
+        <select [(ngModel)]="selectedSurveyId" (change)="onSurveyChange()">
+          <option *ngFor="let survey of surveys" [value]="survey.idSondage">
+            {{ survey.title }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="p-4 flex-auto">
+    <!-- Chart -->
+    <div class="relative" style="height: 350px">
+      <canvas id="bar-chart"></canvas>
+    </div>
+    <!-- Legend -->
+    <div *ngIf="statistics" class="legend-container">
+      <div *ngFor="let label of labels; let i = index" class="legend-item">
+        <strong>{{ label }}</strong>
+        <ul>
+          <li *ngFor="let option of statistics[label].optionStats | keyvalue">
+            {{ option.key }}: {{ option.value }} responses
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .legend-container {
+    margin-top: 20px;
+  }
+
+  .legend-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .legend-item ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .legend-item li {
+    color: #555;
+  }
+</style>

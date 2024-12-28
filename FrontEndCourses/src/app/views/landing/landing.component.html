@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Logo Section */
+    .logo-section {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      display: flex; /* Use Flexbox */
+      justify-content: flex-start; /* Align to the left */
+      align-items: center; /* Vertically align items */
+      padding-left: 20px; /* Add padding for spacing from the left edge */
+    }
+
+    .logo-section img {
+      height: 100px;
+    }
+
+    /* Hero Section */
+
+    .hero .hero-background {
+      background-image: url('assets/img/hero.png');
+      background-position: center center; /* Center the image */
+      background-size: cover; /* Ensure the image covers the whole area */
+      background-repeat: no-repeat; /* Prevent tiling */
+      height: 75vh; /* Use 100% of the viewport height */
+      margin: 0; /* Remove any margin */
+      padding: 0; /* Remove any padding */
+
+    }
+
+
+
+    .hero .overlay button {
+      margin-top: 485px;
+      margin-left: 610px;
+      background-color: #AF2E64; /* Matching the PDF button color */
+      color: white;
+      padding: 20px 100px; /* Adjust padding for height and width */
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px; /* Makes the button rounded */
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .hero .overlay button:hover {
+      background-color: #AF2E64;
+    }
+
+
+    /* Courses Section */
+    .courses {
+      background: #f9f9f9;
+      padding: 40px 20px;
+    }
+    .courses h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+    }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .course-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .course-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .course-card h3 {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: bold;
+    }
+    .course-card p {
+      color: #AF2E64;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Contact Us Section */
+    .contact {
+      background-color: white;
+      padding: 30px 15px; /* Increased padding for spacing */
+      color: black;
+    }
+
+    .contact h4 {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 1.6rem; /* Slightly smaller text for compact layout */
+      font-weight: bold;
+    }
+
+    .contact-form {
+      background: #F9B453;
+      border-radius: 30px; /* Smooth rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+      max-width: 700px; /* Wider form */
+      max-height: 350px;
+      margin: 0 auto;
+      padding: 7px 20px; /* Balanced padding */
+      text-align: center; /* Center-aligned content */
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 3px;
+      color: #333;
+      text-align: left; /* Align labels to the left */
+      font-size: 0.6rem;
+      margin-left: 230px; /* Add a small left margin for alignment */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 30%; /* Input fields with margin on left and right */
+      padding: 5px; /* Compact padding */
+      margin: 0 auto 15px; /* Centered with margin below */
+      border: none;
+      border-radius: 10px; /* Rounded fields */
+      font-size: 0.8rem;
+      background: #fdeedc;
+      color: #333;
+      display: block; /* Ensures full width for centering */
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Focus effect */
+    }
+
+    .contact-form button {
+      background-color: #AF2E64;
+      color: white;
+      padding: 5px 15px; /* Compact padding */
+      border: none;
+      border-radius: 10px; /* Rounded button */
+      font-size: 0.6rem; /* Slightly larger font size */
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 2px; /* Spacing above the button */
+      width: auto; /* Button width like the screenshot */
+    }
+
+    .contact-form button:hover {
+      background-color: #9C244F;
+      transition: background-color 0.3s ease;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Logo Section -->
+<div class="logo-section">
+  <div class="container">
+    <img src="assets/img/Bridge.png" alt="Bridge Logo" />
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+  <div class="hero-background">
+    <div class="overlay">
+
+      <button>REGISTER NOW</button>
+    </div>
+  </div>
+</div>
+
+<!-- Courses Section -->
+<div class="courses">
+  <div class="container">
+    <h2>Discover Our Courses</h2>
+    <div class="course-grid">
+      <div *ngFor="let course of courses" class="course-card">
+        <img [src]="course.imageUrl" alt="{{ course.courseName }}" />
+        <h3>{{ course.courseName }}</h3>
+        <p>{{ course.price }} DT/Month</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Us Section -->
+<div class="contact">
+  <div class="contact-form">
+    <h4>Contact Us</h4>
+    <form>
+      <label for="name">NAME</label>
+      <input type="text" id="name" placeholder="Your Name" />
+      <label for="email">EMAIL</label>
+      <input type="email" id="email" placeholder="Your Email" />
+      <label for="message">MESSAGE</label>
+      <textarea id="message" rows="2" placeholder="Write your message here..."></textarea>
+      <button type="submit">Send the message</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<div class="course-list-container">
+
+  <h2>Courses List</h2>
+
+  <!-- Add Course Button -->
+  <div class="add-course-btn-container">
+    <button class="btn btn-primary add-course-btn" (click)="navigateToAddCourse()">Add Course</button>
+  </div>
+
+  <!-- Display a loading message if courses are not loaded -->
+  <div *ngIf="!courses.length" class="loading-message">
+    <p>Loading courses...</p>
+  </div>
+
+  <!-- Table to display courses -->
+  <table *ngIf="courses.length" class="course-table">
+    <thead>
+    <tr>
+      <th>Course Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of paginatedCourse">
+      <td>{{ course.courseName }}</td>
+      <td>{{ course.price }} DT/Month</td>
+      <td>
+        <img [src]="course.imageUrl" alt="Course Image" class="course-image" />
+      </td>
+      <td>
+        <button mat-icon-button color="primary" (click)="navigateToUpdateCourse(course)" matTooltip="Update">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="confirmDelete(course)" matTooltip="Delete">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <div class="pagination-container">
+    <button
+            class="pagination-btn"
+            (click)="previousPage()"
+            [class.disabled]="currentPage === 0"
+            [disabled]="currentPage === 0">
+      Previous
+    </button>
+    <span class="page-info">Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+    <button
+            class="pagination-btn"
+            (click)="nextPage()"
+            [class.disabled]="currentPage === totalPages - 1"
+            [disabled]="currentPage === totalPages - 1">
+      Next
+    </button>
+  </div>
+</div>
